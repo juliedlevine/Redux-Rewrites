@@ -1,7 +1,8 @@
+// These should match what's in the index container's state
 const INITIAL_STATE = {
     currentIndex: 0,
     images: []
-};
+}
 
 function reducer(state = INITIAL_STATE, action) {
 
@@ -45,7 +46,7 @@ function reducer(state = INITIAL_STATE, action) {
 
     // Catch all
     } else {
-        return INITIAL_STATE
+        return state
     }
 }
 
