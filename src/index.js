@@ -12,14 +12,25 @@ import HeadsTails from './HeadsTails';
 import headsTailsReducer from './HeadsTails.reducer';
 import Dragon from './Dragon';
 import dragonReducer from './Dragon.reducer'
+import Light from './Light';
+import lightReducer from './Light.reducer';
 
 // Combo reducer - reference these keys in Containers to set up state
 const reducer = Redux.combineReducers({
     gallery: galleryReducer,
     count: counterReducer,
     headsTails: headsTailsReducer,
-    dragon: dragonReducer
+    dragon: dragonReducer,
+    lightBulb: lightReducer
 })
+
+// Light container component
+const LightContainer = ReactRedux.connect(
+    state => ({ on: state.lightBulb }),
+    dispatch => ({
+        toggle: () => dispatch({ type: 'toggle'}),
+    })
+)(Light)
 
 // Gallery Container component
 const GalleryContainer = ReactRedux.connect(
@@ -96,11 +107,12 @@ const store = Redux.createStore(
 // Render to DOM
 ReactDOM.render(
     <ReactRedux.Provider store={store}>
-        <div>
-            <GalleryContainer/>
-            <CounterContainer/>
-            <HeadsTailsContainer/>
-            <DragonContainer/>
+        <div className="container">
+            <div className="square gallery"><GalleryContainer/></div>
+            <div className="square counter"><CounterContainer/></div>
+            <div className="square coin"><HeadsTailsContainer/></div>
+            <div className="square dragon"><DragonContainer/></div>
+            <div className="square light"><LightContainer/></div>
         </div>
     </ReactRedux.Provider>,
     document.getElementById('root')

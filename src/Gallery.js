@@ -13,12 +13,14 @@ export default class Gallery extends React.Component {
 
                 {/* Next Button */}
                 <button onClick={this.props.next}>Next</button><br/>
-                <img src={currentImage} key={currentImage} alt="Funny Cat"/>
+
+                {/* Main Image */}
+                <img className="mainImage" src={currentImage} key={currentImage} alt="Funny Cat"/>
 
                 {/* Thumbnail Images */}
                 <div>
                     {this.props.images.map((imageUrl, idx) =>
-                    <img onClick={() => this.props.thumbnail(idx)} key={idx} src={imageUrl} height="60" alt="Funny Cat"/>
+                    <img onClick={() => this.props.thumbnail(idx)} key={idx} src={imageUrl} height="50" alt="Funny Cat"/>
                     )}
                 </div>
             </div>

@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.mainImage {
+    width: 300px;
+}
+.container {
+    margin: 55px auto;
+    width: 745px;
+}
+.square {
+    text-align: center;
+    border: 1px solid black;
+    float: left;
+    width: 370px;
+    height: 377px;
+}
+.counter button {
+    width: 125px;
+    height: 125px;
+    font-size: 50px;
+}
+.counter p {
+    display: inline-block;
+    font-size: 85px;
+    padding: 10px;
+}
+.coin div {
+    margin-top: 119px;
+}
+.dragon div {
+    margin-top: 75px;
+}
+.light img {
+    margin-top: 50px;
+    width: 175px;
+}

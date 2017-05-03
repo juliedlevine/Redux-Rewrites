@@ -6,7 +6,7 @@ export default class Counter extends React.Component {
         return (
             <div>
                 <button onClick={this.props.subtract}>-</button>
-                {this.props.count}
+                <p>{this.props.count}</p>
                 <button onClick={this.props.add}>+</button>
             </div>
         );
